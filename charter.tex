@@ -17,7 +17,7 @@
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar en cualquier lugar del documento con el comando \authorname
-\autor{César Javier Fanelli} 
+\autor{Ing. César Javier Fanelli} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
 \director{Nombre del Director}
@@ -69,10 +69,10 @@
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 1.0		& Creación del documento												& 20/10/2022 \\ \hline
-1.1		& Se completa hasta la sección 5 inclusive							& 24/10/2022 \\ \hline
-%1.2		& Se completa hasta la sección 9 inclusive							& 31/10/2022 \\ \hline
-%1.3		& Se completa hasta la sección 12 inclusive							& dd/mm/aaaa \\ \hline
-%1.4		& Se completa hasta la sección 15 inclusive (Se completa el plan)		& dd/mm/aaaa \\ \hline
+1.1		& Se completa hasta la sección 5 inclusive							& 3/11/2022 \\ \hline
+1.2		& Se corrige hasta la sección 5 y se completa hasta la sección 9 inclusive							& 31/10/2022 \\ \hline
+%1.3		& Se corrige hasta la sección 9 y se completa hasta la sección 12 inclusive							& dd/mm/aaaa \\ \hline
+%1.4		& Se corrige hasta la sección 12 y se completa hasta la sección 15 inclusive (Se completa el plan)		& dd/mm/aaaa \\ \hline
 %		Se puede agregar algo más \newline
 %		En distintas líneas \newline
 %		Así                                                    & dd/mm/aaaa \\ \hline
@@ -92,7 +92,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el diseño e implementación de un prototipo un sistema de control de ambientes por internet, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo (a definir detalladamente más adelante) y monto a definir, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el diseño e implementación de un prototipo un sistema de control de ambientes por internet, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y USD850, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -102,7 +102,7 @@ Se adjunta a esta acta la planificación inicial.
 \begin{table}[ht]
 \centering
 \begin{tabular}{ccc}
-\begin{tabular}[c]{@{}c@{}}Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\ 
+\begin{tabular}[c]{@{}c@{}}Dr. Ing. Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\ 
 \multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \supname \\ Director del Trabajo Final\end{tabular}} \vspace{2.5cm} \\
 %\begin{tabular}[c]{@{}c@{}}\jurunoname \\ Jurado del Trabajo Final\end{tabular}     &  & \begin{tabular}[c]{@{}c@{}}\jurdosname\\ Jurado del Trabajo Final\end{tabular}  \vspace{2.5cm}  \\
 %\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \jurtresname\\ Jurado del Trabajo Final\end{tabular}} \vspace{.5cm}                                                                     
@@ -121,7 +121,7 @@ Así se puede ver el interés y hasta a veces la necesidad de conocer el estado 
 
 Este proyecto, de índole personal o académica, surge de la idea principal de la tesis de grado de la carrera de la cual egresé en 2014 de ingeniero electrónico. El modelo anterior de sistema, era un prototipo básico de control inteligente de hogares, que si bien poseía comunicación inalámbrica y control de varios actuadores, carecía de varios aspectos, como ser, poder hacer el control mediante una PC o smartphone y la conexión a internet, que le aporta funcionalidad y versatilidad.
 
-En la figura 1 se muestra un diagrama en bloques del sistema a desarrollar en el proyecto. Se observa que consta de 2 partes físicas diferenciables: el nodo, o actuador remoto, y el servidor backend, implementado en una Raspberry Pi. El nodo a su vez estará compuesto por el módulo de control (comandado por una placa de desarrollo con ESP32), un display para indicar los valores medidos y seteados, un potenciómetro digital para variar la temperatura, una salida de relé para el calefactor y una salida PWM para controlar una luminaria LED de 12VCC. El usuario podrá acceder mediante una página web, con usuario y contraseña, a visualizar y cambiar los parámetros de la habitación donde esté instalado el sistema. En este caso, el sistema se implementará y probará con un sólo nodo.
+En la figura 1 se muestra un diagrama en bloques del sistema a desarrollar en el proyecto. Se observa que consta de 2 partes físicas diferenciables: el nodo, o actuador remoto, y el servidor backend, implementado en una Raspberry Pi. El nodo a su vez estará compuesto por el módulo de control (comandado por una placa de desarrollo con ESP32), un display para indicar los valores medidos y seteados, un potenciómetro digital para variar la temperatura, una salida de relé para el calefactor y una salida PWM para controlar una luminaria LED de 12 VCC. El usuario podrá acceder mediante una página web, con usuario y contraseña, a visualizar y cambiar los parámetros de la habitación donde esté instalado el sistema. En este caso, el sistema se implementará y probará con un solo nodo.
 
 La diferencia con los sistemas ya existentes, es que sea fácilmente adaptable a entornos fuera de un hogar y una oficina, tales como una sala de servidores, un área limpia de un laboratorio, u otros lugares donde se requiera sensar distintos parámetros y poder además tener un historial de ellos.
 
@@ -143,9 +143,9 @@ La diferencia con los sistemas ya existentes, es que sea fácilmente adaptable a
 \begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
-Rol				& Nombre y Apellido	&	Organización		&	Puesto 	\\ \hline
+Rol				& Nombre y Apellido	& Organización		& Puesto 	\\ \hline
 %Auspiciante		&					&					&        	\\ \hline
-Cliente			& \clientename		&\empclientename		&        	\\ \hline
+Cliente			& \clientename		&\empclientename		& A definir 	\\ \hline
 %Impulsor		&					&					&        	\\ \hline
 Responsable		& \authorname		& FIUBA				& Alumno 	\\ \hline
 %Colaboradores	&					&					&        	\\ \hline
@@ -157,7 +157,7 @@ Usuario final	& Usuarios que habiten o utilicen los recintos	& -		& -       	\\ 
 \end{table}
 
 \begin{itemize}
-	\item Cliente: es una persona con conocimientos en el tema y exigente.
+	\item Cliente: a definir.%es una persona con conocimientos en el tema y exigente.
 	\item Responsable: Ing. Javier Fanelli, único responsable a cargo del desarrollo del proyecto. Se ocupará de la planificación y ejecución de las tareas.
 	\item Orientador: va a poder colaborar mucho con el desarrollo del proyecto y la resolución de los problemas que surjan en el camino.
 \end{itemize}
@@ -165,7 +165,7 @@ Usuario final	& Usuarios que habiten o utilicen los recintos	& -		& -       	\\ 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-El propósito de este proyecto es crear un prototipo de sistema de ambientes inteligentes, que sirva como puntapié inicial de un sistema más grande y más completo. Al ser personal la intención es diseñar un sistema que sea potencialmente escalable, al cual se le puedan ir agregando más módulos con distintas funcionalidades que sean de utilidad en la vida cotidiana. Dichas funciones futuras podrían ser controlar el acceso (que se lea desde un celular), integrar cámaras de seguridad o sensar y modificar de otros parámetros. El aprendizaje y el desafío son las motivaciones para hacer un proyecto de esta índole. Y si resulta siendo viable técnica y económicamente, en un futuro se analizará la posibilidad de un desarrollo de negocio.
+El propósito de este proyecto es crear un prototipo de sistema de ambientes inteligentes, que sirva como puntapié inicial de un sistema más grande y más completo. Al ser personal la intención es diseñar un sistema que sea potencialmente escalable, al que se le puedan ir agregando más módulos con distintas funcionalidades que sean de utilidad en la vida cotidiana. Dichas funciones futuras podrían ser controlar el acceso (que se lea desde un celular), integrar cámaras de seguridad o sensar y modificar de otros parámetros. El aprendizaje y el desafío son las motivaciones para hacer un proyecto de esta índole. Y si resultara siendo viable técnica y económicamente, en un futuro se analizará la posibilidad de un desarrollo de negocio.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
@@ -181,7 +181,7 @@ El proyecto en cuestión incluye:
 El proyecto no incluye:
 \begin{itemize}
 	\item Otros nodos cuyas funciones no sean las del ejemplo descripto en el diagrama en bloques.
-	\item Software en Android o IOS para acceder a la plataforma.
+	\item Software en Android o iOS para acceder a la plataforma.
 \end{itemize}
 
 \section{5. Supuestos del proyecto}
@@ -190,7 +190,11 @@ El proyecto no incluye:
 Para el desarrollo del presente proyecto se supone que:
 \begin{itemize}
 	\item Se podrán conseguir todos los materiales necesarios para el armado del prototipo.
-	\item Se contará con los recursos económicos y el tiempo para desarrollarlo con normalidad.
+	\item Se contará con los recursos económicos para desarrollarlo con normalidad.
+	\item No surgirán imprevistos personales que retrasen significativamente o pospongan el desarrollo del proyecto o la cursada del posgrado.
+	\item Se adquirirán los conocimientos necesarios para la implementación del software y el sistema en su integridad.
+	\item Se tendrá apoyo del director en temas netamente técnicos para el desarrollo.
+	\item Se tendrá feedback constante del cliente para definir alcance, requerimientos y aprobar la funcionalidad del prototipo.
 \end{itemize}
 
 \section{6. Requerimientos}
