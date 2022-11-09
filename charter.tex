@@ -20,14 +20,14 @@
 \autor{Ing. César Javier Fanelli} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Nombre del Director}
-\pertenenciaDirector{pertenencia} 
+\director{Ing. Fernando Lichtschein}
+\pertenenciaDirector{FIUBA} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
 \codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{A definir}
+\cliente{Mg. Ing. Damián Corbalán}
 \empresaCliente{A definir}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
@@ -195,57 +195,56 @@ Para el desarrollo del presente proyecto se supone que:
 	\item Se adquirirán los conocimientos necesarios para la implementación del software y el sistema en su integridad.
 	\item Se tendrá apoyo del director en temas netamente técnicos para el desarrollo.
 	\item Se tendrá feedback constante del cliente para definir alcance, requerimientos y aprobar la funcionalidad del prototipo.
+	\item El cliente cuenta con conexión a Internet y un hardware mínimo para conectar el sistema a su red local.
 \end{itemize}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
 
-\begin{consigna}{red}
-Los requerimientos deben numerarse y de ser posible estar agruparlos por afinidad, por ejemplo:
+Los requerimientos revisados en conjunto con el cliente y agrupados por afinidad son:
 
 \begin{enumerate}
-	\item Requerimientos funcionales
+	\item Requerimientos funcionales del sistema.
 		\begin{enumerate}
-			\item El sistema debe...
-			\item Tal componente debe...
-			\item El usuario debe poder...
+			\item El sistema deberá poder funcionar de forma automática o manual.		
+			\item El modo automático consistirá en poder programar horarios y niveles de las salidas, seteadas a través de la interfaz web.
+			\item El modo manual consistirá en accionar las salidas desde la interfaz web o desde los comandos en el nodo.
+			\item Al modificarse de forma manual cualquier parámetro, el nodo informará al servidor el nuevo valor del parámetro seteado.
+			\item Al activar el modo manual, se interrumpirá el modo automático.
+			\item Se guardarán los valores sensados y seteados en una base de datos dentro del servidor.	
+			\item Los usuarios podrán revisar los datos de los valores actuales e históricos.
 		\end{enumerate}
-	\item Requerimientos de documentación
+	\item Requerimientos asociados al nodo.
 		\begin{enumerate}
-			\item Requerimiento 1
-			\item Requerimiento 2 (prioridad menor)
+			\item El nodo estará implementado en una placa con un ESP32.			
+			\item Contará con un potenciómetro digital para elegir la temperatura e iluminación.
+			\item Tendrá con un display que mostrará la temperatura sensada y el estado de las salidas.
+			\item La frecuencia de sensado de la temperatura será de 1 minuto.
+			\item Los niveles de tensión de las entradas y salidas lógicas serán adaptados a los valores lógicos correspondientes de los actuadores.
+			\item Se alimentará con una fuente de 5 VCC y un cable microUSB.
 		\end{enumerate}
-	\item Requerimiento de testing...
-	\item Requerimientos de la interfaz...
-	\item Requerimientos interoperabilidad...
-	\item etc...
+	\item Requerimientos asociados al servidor.
+		\begin{enumerate}
+			\item El servidor estará montado en una Raspberry Pi con sistema operativo Linux.
+			\item Alojará el código de la página web desde la que se ingresará al sistema.
+			\item Alojará el código del backend del servidor y la base de datos.
+			\item Se alimentará con una fuente de 5 VCC.
+		\end{enumerate}
+	\item Requerimientos de la interfaz.
+		\begin{enumerate}
+			\item Será intuitiva y sencilla de operar.
+			\item Contará con logueo de usuario y contraseña para ver y cambiar parámetros.
+		\end{enumerate}
 \end{enumerate}
-
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
-
-No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-	\item Ser breve y conciso (nadie lee cosas largas). 
-	\item Ser específico: no dejar lugar a confusiones.
-	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
-
-\end{consigna}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
 Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
 
 El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
 
 Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
-\end{consigna}
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
@@ -268,7 +267,6 @@ Los entregables del proyecto son (ejemplo):
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
 El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
 
 \begin{enumerate}
@@ -297,8 +295,6 @@ El WBS debe tener relación directa o indirecta con los requerimientos.  Son tod
 Cantidad total de horas: (tantas hs)
 
 Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
-
-\end{consigna}
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
