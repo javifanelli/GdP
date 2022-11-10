@@ -28,7 +28,7 @@
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
 \cliente{Mg. Ing. Damián Corbalán}
-\empresaCliente{A definir}
+\empresaCliente{Movistar}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
 \juradoUno{Nombre y Apellido (1)}
@@ -145,7 +145,7 @@ La diferencia con los sistemas ya existentes, es que sea fácilmente adaptable a
 \rowcolor[HTML]{C0C0C0} 
 Rol				& Nombre y Apellido	& Organización		& Puesto 	\\ \hline
 %Auspiciante		&					&					&        	\\ \hline
-Cliente			& \clientename		&\empclientename		& A definir 	\\ \hline
+Cliente			& \clientename		&\empclientename		& Especialista de redes IP 	\\ \hline
 %Impulsor		&					&					&        	\\ \hline
 Responsable		& \authorname		& FIUBA				& Alumno 	\\ \hline
 %Colaboradores	&					&					&        	\\ \hline
@@ -240,29 +240,35 @@ Los requerimientos revisados en conjunto con el cliente y agrupados por afinidad
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
-
-El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
-
-Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
+A continuación se enumeran las historias de usuario y se las pondera según la serie de Fibonacci. Los valores elegidos para la dificultad son 3, 5 y 8; para la complejidad 3, 5 y 8 y para la incertidumbre 2, 3 y 5.
+\begin{itemize}
+	\item Como usuario deseo poder monitorear la temperatura en tiempo real de la habitación para saber si hace falta encender la calefacción. \\
+Dificultad: 5 - Complejidad: 3 - Incertidumbre: 3	 - Total: 11 - Valor más cercano 13
+	\item Como usuario deseo que el sistema funcione igualmente sin internet para garantizar el confort en la sala. \\
+Dificultad: 3 - Complejidad: 3 - Incertidumbre: 2	 - Total: 8 - Valor más cercano 8	
+	\item Como usuario quiero que el sistema me de aviso por mail si la temperatura alcanza valores extremos para salvaguardar la integridad de los bienes. \\
+Dificultad: 5 - Complejidad: 5 - Incertidumbre: 3	 - Total: 13 - Valor más cercano 13
+	\item Como usuario quiero programar la regulación de las luces en horarios programados para simular la presencia de personas en una casa que no está siempre habitada. \\
+Dificultad: 5 - Complejidad: 8 - Incertidumbre: 3	 - Total: 16 - Valor más cercano 21
+	\item Como usuario quiero almacenar los valores sensados y los estados de las salidas para poder generar un posible ahorro de energía eléctrica. \\
+Dificultad: 5 - Complejidad: 5 - Incertidumbre: 3	 - Total: 13 - Valor más cercano 13
+	\item Como usuario quiero poder controlar las salidas desde un mando dentro de la habitación para no depender de una PC o teléfono.
+Dificultad: 8 - Complejidad: 8 - Incertidumbre: 3	 - Total: 19 - Valor más cercano 21
+\end{itemize}
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
-
-Los entregables del proyecto son (ejemplo):
+Los entregables del proyecto son:
 
 \begin{itemize}
 	\item Manual de uso
-	\item Diagrama de circuitos esquemáticos
-	\item Código fuente del firmware
-	\item Diagrama de instalación
+	\item Diagrama de circuito esquemático de accesorios del nodo
+	\item Código fuente del nodo (ESP32)
+	\item Código fuente del frontend y del backend
+	\item Diagrama de conexión del nodo
 	\item Informe final
-	\item etc...
 \end{itemize}
-
-\end{consigna}
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
