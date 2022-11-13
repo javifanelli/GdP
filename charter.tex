@@ -204,36 +204,41 @@ Para el desarrollo del presente proyecto se supone que:
 Los requerimientos revisados en conjunto con el cliente y agrupados por afinidad son:
 
 \begin{enumerate}
-	\item Requerimientos funcionales del sistema.
+	\item Requerimientos funcionales del sistema
 		\begin{enumerate}
-			\item El sistema deberá poder funcionar de forma automática o manual.		
-			\item El modo automático consistirá en poder programar horarios y niveles de las salidas, seteadas a través de la interfaz web.
-			\item El modo manual consistirá en accionar las salidas desde la interfaz web o desde los comandos en el nodo.
-			\item Al modificarse de forma manual cualquier parámetro, el nodo informará al servidor el nuevo valor del parámetro seteado.
-			\item Al activar el modo manual, se interrumpirá el modo automático.
-			\item Se guardarán los valores sensados y seteados en una base de datos dentro del servidor.	
-			\item Los usuarios podrán revisar los datos de los valores actuales e históricos.
+			\item El sistema deberá poder funcionar de forma automática o manual.	
+			\item El modo automático consistirá en poder programar horarios y niveles de las salidas, seteadas a través de la interfaz web
+			\item El modo manual consistirá en accionar las salidas desde la interfaz web o desde los comandos en el nodo
+			\item Al modificarse de forma manual cualquier parámetro, el nodo informará al servidor el nuevo valor del parámetro seteado
+			\item Al activar el modo manual, se interrumpirá el modo automático
+			\item Se guardarán los valores sensados y seteados en una base de datos dentro del servidor
+			\item Los usuarios podrán revisar los datos de los valores actuales e históricos
 		\end{enumerate}
-	\item Requerimientos asociados al nodo.
+	\item Requerimientos asociados al nodo
 		\begin{enumerate}
-			\item El nodo estará implementado en una placa con un ESP32.			
-			\item Contará con un potenciómetro digital para elegir la temperatura e iluminación.
-			\item Tendrá con un display que mostrará la temperatura sensada y el estado de las salidas.
-			\item La frecuencia de sensado de la temperatura será de 1 minuto.
-			\item Los niveles de tensión de las entradas y salidas lógicas serán adaptados a los valores lógicos correspondientes de los actuadores.
-			\item Se alimentará con una fuente de 5 VCC y un cable microUSB.
+			\item El nodo estará implementado en una placa con un ESP32
+			\item Contará con un potenciómetro digital para elegir la temperatura e iluminación
+			\item Tendrá con un display que mostrará la temperatura sensada y el estado de las salidas
+			\item La frecuencia de sensado de la temperatura será de 1 minuto
+			\item Los niveles de tensión de las entradas y salidas lógicas serán adaptados a los valores lógicos correspondientes de los actuadores
+			\item Se alimentará con una fuente de 5 VCC y un cable microUSB
 		\end{enumerate}
-	\item Requerimientos asociados al servidor.
+	\item Requerimientos asociados al servidor
 		\begin{enumerate}
-			\item El servidor estará montado en una Raspberry Pi con sistema operativo Linux.
-			\item Alojará el código de la página web desde la que se ingresará al sistema.
-			\item Alojará el código del backend del servidor y la base de datos.
-			\item Se alimentará con una fuente de 5 VCC.
+			\item El servidor estará montado en una Raspberry Pi con sistema operativo Linux
+			\item Alojará el código de la página web desde la que se ingresará al sistema
+			\item Alojará el código del backend del servidor y la base de datos
+			\item Se alimentará con una fuente de 5 VCC
 		\end{enumerate}
-	\item Requerimientos de la interfaz.
+	\item Requerimientos de la interfaz
 		\begin{enumerate}
-			\item Será intuitiva y sencilla de operar.
-			\item Contará con logueo de usuario y contraseña para ver y cambiar parámetros.
+			\item Será intuitiva y sencilla de operar
+			\item Contará con logueo de usuario y contraseña para ver y cambiar parámetros
+		\end{enumerate}
+	\item Requerimientos opcionales (se llevarán a cabo si el tiempo es suficiente)
+		\begin{enumerate}
+			\item El nodo contará con una salida de dimerización de 220 VCA para ventilación
+			\item El servidor (Raspberry Pi) funcionará como access point al que se conectará el nodo
 		\end{enumerate}
 \end{enumerate}
 
@@ -262,45 +267,107 @@ Dificultad: 8 - Complejidad: 8 - Incertidumbre: 3	 - Total: 19 - Valor más cerc
 Los entregables del proyecto son:
 
 \begin{itemize}
-	\item Manual de uso
+	\item Diagrama de conexión del nodo
 	\item Diagrama de circuito esquemático de accesorios del nodo
 	\item Código fuente del nodo (ESP32)
-	\item Código fuente del frontend y del backend
-	\item Diagrama de conexión del nodo
+	\item Código fuente del frontend y del backend 
 	\item Informe final
 \end{itemize}
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
+Las tareas se han agrupado por tema y ordenado por secuencialidad.
 
 \begin{enumerate}
-\item Grupo de tareas 1
+\item Investigación y búsqueda de material (45 hs)
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+		\item Búsqueda y análisis de soluciones similares en el mercado (5 hs)
+		\item Búsqueda de códigos fuente de ejemplo similares (10 hs)
+		\item Búsqueda y análisis de los materiales a usar (5 hs)
+		\item Listado de materiales necesarios y aspectos de red (5 hs)
+		\item Estudio de funcionamiento básico de cada componente del sistema (10 hs)
+		\item Estudio y diseño de diagrama en bloques del sistema (5 hs)
+		\item Organizar la documentación y archivar lo importante (5 hs)
 	\end{enumerate}
-\item Grupo de tareas 2
+\item Adquisición de materiales (15 hs)
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+		\item Búsqueda de materiales (3 hs)
+		\item Análisis de alternativas (2 hs)
+		\item Armado y análisis de costos (5 hs)
+		\item Negociación con proveedores y compra de materiales (5 hs)
 	\end{enumerate}
-\item Grupo de tareas 3
+\item Diseño y puesta en marcha de hardware (87 hs)
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
-	\item Tarea 4 (tantas hs)
-	\item Tarea 5 (tantas hs)
+		\item Instalación de sistema operativo Linux en servidor (5 hs)
+		\item Instalación y configuración de software adicional y dependencias (2 hs)
+		\item Pruebas de funcionalidad básicas (5 h)
+		\item Diseño de circuitos esquemático e impreso del hardware adicional al nodo (10 hs)
+		\item Armado y pruebas del hardware adicional (20 hs)
+		\item Conexión y pruebas del hardware adicional con ESP32 (40 hs)
+		\item Documentar brevemente lo sucedido en este punto (5 hs)
+	\end{enumerate}
+\item Instalación y pruebas de la red local (23 hs)
+	\begin{enumerate}
+		\item Instalación y configuración de la red local (10 hs)
+		\item Pruebas iniciales de conexión del servidor a la red (5 h)
+		\item Pruebas de conexión del nodo a la red (3 hs)
+		\item Documentar brevemente lo sucedido en este punto (5 hs)
+	\end{enumerate}
+\item Desarrollo del software del servidor (frontend y backend) (302 hs)
+	\begin{enumerate}
+		\item Instalación y configuración del software de la base de datos (5 hs)
+		\item Instalación y configuración del servidor web (5 hs)
+		\item Pruebas avanzadas de conexión a la red local e internet (2 hs)
+		\item Creación del software para la verificación constante de conexión a internet (5 hs)
+		\item Creación del software para conocer la hora y temperatura local por internet (5 hs)
+		\item Creación del script para correr los programas automáticamente al encender el servidor (5 hs)
+		\item Diseño e implementación de la base de datos (10 hs)
+		\item Diseño y desarrollo de las funcionalidades del backend (40 hs)
+		\item Pruebas de integración con la base de datos (10 hs)
+		\item Desarrollo y configuración del código para enviar mails (20 hs)
+		\item Diseño y maquetación de la página web (20 hs)
+		\item Desarrollo de la página web (40 hs)
+		\item Pruebas de funcionalidad de la página web (20 hs)
+		\item Integración de la página web con el software backend (30 hs)
+		\item Resolución de problemas de integración (20 hs)
+		\item Resolución de problemas de funcionamiento (40 hs)
+		\item Diseño de reportes a presentar por la aplicación (20 hs)
+		\item Documentar brevemente lo sucedido en este punto (5 hs)
+	\end{enumerate}
+\item Desarrollo del software de nodo (100 hs)
+	\begin{enumerate}
+		\item Diseño de base de software de inicialización y configuración del nodo (5 hs)
+		\item Diseño de software de lectura de entradas y actuación de salidas (20 hs)
+		\item Diseño de software de comunicación con el servidor (30 hs)
+		\item Pruebas de comunicación con el servidor (20 hs)
+		\item Resolución de problemas (20 hs)
+		\item Documentar brevemente lo sucedido en este punto (5 hs)
+	\end{enumerate}
+\item Instalación y pruebas funcionales (33 hs)
+	\begin{enumerate}
+		\item Instalación del nodo y adicionales en la habitación (7 hs)
+		\item Pruebas funcionales de los comandos locales dentro de la habitación (3 hs)
+		\item Análisis y resolución de posibles fallas (3 hs)
+		\item Pruebas reales de funcionalidad en un ambiente (10 hs)
+		\item Pruebas de alarmas y funcionalidad de aplicación web (5 hs)
+		\item Documentar brevemente lo sucedido en este punto (5 hs)
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: (tantas hs)
+Cantidad total de horas: (605 hs). \\
+Si en los cálculos anteriores llegara a haber sobrante de tiempo, se puede analizar diseñar e implementar el control de la salida de 220 VCA para controlar la ventilación. Dicha duración de tareas extra (opcionales) se estima de la siguiente manera:
+\begin{itemize}
 
-Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
+\item Diseño e implementación del control de ventilación mediante salida dimerizable (50 hs)
+	\begin{enumerate}
+		\item Diseño de placa de control de la salida de 220 VCA (10 hs)
+		\item Armado de placa para dimerizar salida de 220 VCA (10 hs)
+		\item Conexión al nodo y pruebas (5 hs)
+		\item Modificación del software del servidor (5 hs)
+		\item Modificación del software del nodo (20 hs)
+	\end{enumerate}
+\end{itemize}
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
