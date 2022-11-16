@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<project name="" company="" manager="Ing. Javier Fanelli" phase="" project-start="20230301T000000Z" mrproject-version="2" calendar="2">
+  <properties/>
+  <phases/>
+  <calendars>
+    <day-types>
+      <day-type id="0" name="Jornada laboral" description="Un d&#xED;a de trabajo predeterminado"/>
+      <day-type id="1" name="Jornada de descanso" description="Un d&#xED;a de descanso predeterminado"/>
+      <day-type id="2" name="Usar base" description="Usar d&#xED;a del calendario base"/>
+    </day-types>
+    <calendar id="1" name="Prueba">
+      <default-week/>
+      <overridden-day-types>
+        <overridden-day-type id="0">
+          <interval start="2100" end="2200"/>
+        </overridden-day-type>
+      </overridden-day-types>
+      <days/>
+    </calendar>
+    <calendar id="2" name="Predeterminado">
+      <default-week mon="0" tue="0" wed="0" thu="0" fri="0" sat="1" sun="1"/>
+      <overridden-day-types>
+        <overridden-day-type id="0">
+          <interval start="2100" end="2200"/>
+        </overridden-day-type>
+      </overridden-day-types>
+      <days/>
+    </calendar>
+  </calendars>
+  <tasks>
+    <task id="1" name="Investigaci&#xF3;n y b&#xFA;squeda de material" note="" work="97200" start="20230301T000000Z" end="20230406T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="2" name="B&#xFA;squeda y an&#xE1;lisis de soluciones similares en el mercado" note="" work="25200" start="20230301T000000Z" end="20230309T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="3" name="B&#xFA;squeda de c&#xF3;digos fuente de ejemplo similares" note="" work="25200" start="20230309T220000Z" end="20230320T220000Z" work-start="20230310T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="2" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="4" name="B&#xFA;squeda y an&#xE1;lisis de los materiales a usar" note="" work="3600" start="20230320T220000Z" end="20230321T220000Z" work-start="20230321T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="3" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="5" name="Listado de materiales necesarios y aspectos de red" note="" work="3600" start="20230321T220000Z" end="20230322T220000Z" work-start="20230322T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="4" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="6" name="Estudio de funcionamiento b&#xE1;sico de cada componente del sistema" note="" work="25200" start="20230322T220000Z" end="20230331T220000Z" work-start="20230323T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="5" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="7" name="Estudio y dise&#xF1;o de diagrama en bloques del sistema" note="" work="10800" start="20230331T220000Z" end="20230405T220000Z" work-start="20230403T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="6" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="8" name="Organizar la documentaci&#xF3;n y archivar lo importante" note="" work="3600" start="20230405T220000Z" end="20230406T220000Z" work-start="20230406T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="7" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+    <task id="9" name="Adquisici&#xF3;n de materiales" note="" work="14400" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="10" name="B&#xFA;squeda de materiales" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="11" name="An&#xE1;lisis de alternativas" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="12" name="Armado y an&#xE1;lisis de costos" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="13" name="Negociaci&#xF3;n con proveedores y compra de materiales" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    </task>
+    <task id="14" name="Dise&#xF1;o y puesta en marcha de hardware" note="" work="21600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="15" name="Instalaci&#xF3;n de sistema operativo Linux en servidor" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="16" name="Pruebas de funcionalidad b&#xE1;sicas" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="17" name="Dise&#xF1;o de circuitos esquem&#xE1;tico e impreso del hardware adicional al nodo" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="18" name="Armado y pruebas del hardware adicional" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="19" name="Conexi&#xF3;n y pruebas del hardware adicional con ESP32" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="20" name="Documentar brevemente lo sucedido en este punto" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    </task>
+    <task id="21" name="Instalaci&#xF3;n y pruebas de la red local" note="" work="14400" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="22" name="Instalaci&#xF3;n y configuraci&#xF3;n de la red local" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="23" name="Pruebas iniciales de conexi&#xF3;n del servidor a la red" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="24" name="Pruebas de conexi&#xF3;n del nodo a la red" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="25" name="Documentar brevemente lo sucedido en este punt" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    </task>
+    <task id="26" name="Desarrollo del software del servidor (frontend y backend)" note="" work="64800" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="27" name="Instalaci&#xF3;n y configuraci&#xF3;n del software de la base de datos" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="28" name="Instalaci&#xF3;n y configuraci&#xF3;n del servidor web" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="29" name="Pruebas avanzadas de conexi&#xF3;n a la red local e internet" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="30" name="Creaci&#xF3;n del software para la verificaci&#xF3;n constante de conexi&#xF3;n a internet" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="31" name="Creaci&#xF3;n del software para conocer la hora y temperatura local por internet" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="32" name="Creaci&#xF3;n del script para correr los programas autom&#xE1;ticamente al encender el servidor" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="33" name="Dise&#xF1;o e implementaci&#xF3;n de la base de datos" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="34" name="Dise&#xF1;o y desarrollo de las funcionalidades del backend" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="35" name="Pruebas de integraci&#xF3;n con la base de datos" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="36" name="Desarrollo y configuraci&#xF3;n del c&#xF3;digo para enviar mails" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="37" name="Dise&#xF1;o y maquetaci&#xF3;n de la p&#xE1;gina web" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="38" name="Desarrollo de la p&#xE1;gina web" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="39" name="Pruebas de funcionalidad de la p&#xE1;gina web" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="40" name="Integraci&#xF3;n de la p&#xE1;gina web con el software backend" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="41" name="Resoluci&#xF3;n de problemas de funcionamiento" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="42" name="Resoluci&#xF3;n de problemas de funcionamiento" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="43" name="Dise&#xF1;o de reportes a presentar por la aplicaci&#xF3;n" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="44" name="Documentar brevemente lo sucedido en este punto" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    </task>
+    <task id="45" name="Desarrollo del software de nodo" note="" work="21600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="46" name="Dise&#xF1;o de base de software de inicializaci&#xF3;n y configuraci&#xF3;n del nodo" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="47" name="Dise&#xF1;o de software de lectura de entradas y actuaci&#xF3;n de salidas" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="48" name="Dise&#xF1;o de software de comunicaci&#xF3;n con el servidor" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="49" name="Pruebas de comunicaci&#xF3;n con el servidor" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="50" name="Resoluci&#xF3;n de problemas" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="51" name="Documentar brevemente lo sucedido en este punto" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    </task>
+    <task id="52" name="Instalaci&#xF3;n y pruebas funcionales" note="" work="21600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="53" name="Instalaci&#xF3;n del nodo y adicionales en la habitaci&#xF3;n" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="54" name="Pruebas funcionales de los comandos locales dentro de la habitaci&#xF3;n" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="55" name="An&#xE1;lisis y resoluci&#xF3;n de posibles fallas" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="56" name="Pruebas reales de funcionalidad en un ambiente" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="57" name="Pruebas de alarmas y funcionalidad de aplicaci&#xF3;n web" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="58" name="Documentar brevemente lo sucedido en este punto" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    </task>
+    <task id="59" name="Elaboraci&#xF3;n de documentaci&#xF3;n" note="" work="10800" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="60" name="Redacci&#xF3;n del manual de uso" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="61" name="Redacci&#xF3;n del informe de avance" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="62" name="Elaboraci&#xF3;n de la memoria t&#xE9;cnica" note="" work="3600" start="20230301T000000Z" end="20230301T220000Z" work-start="20230301T210000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    </task>
+  </tasks>
+  <resource-groups/>
+  <resources/>
+  <allocations/>
+</project>
