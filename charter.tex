@@ -92,7 +92,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el diseño e implementación de un prototipo un sistema de control de ambientes por internet, y tendrá un presupuesto preliminar estimado de 652 horas de trabajo y USD850, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el diseño e implementación de un prototipo un sistema de control de ambientes por internet, y tendrá un presupuesto preliminar estimado de 642 horas de trabajo y \$138344, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -157,7 +157,7 @@ Usuario final	& Usuarios que habiten o utilicen los recintos	& -		& -       	\\ 
 \end{table}
 
 \begin{itemize}
-	\item Cliente: Mg. Ing. Damián Rubén Corbalan. Es una persona exigente con muchos conocimientos en el tema.
+	\item Cliente: Mg. Ing. Damián Rubén Corbalán. Es una persona exigente con muchos conocimientos en el tema.
 	\item Responsable: Ing. César Javier Fanelli, único responsable a cargo del desarrollo del proyecto. Se ocupará de la planificación y ejecución de las tareas.
 	\item Orientador: Ing. Fernando Lichtschein. Debido a su experiencia y conocimiento va a poder colaborar mucho con el desarrollo del proyecto y la resolución de los problemas que surjan en el camino.
 \end{itemize}
@@ -306,12 +306,12 @@ Las tareas se han agrupado por tema y ordenado por secuencialidad.
 		\item Conexión y pruebas del hardware adicional con ESP32 (40 h)
 		\item Documentar brevemente lo sucedido en este punto (5 h)
 	\end{enumerate}
-\item Instalación y pruebas de la red local (20 h)
+\item Instalación y pruebas de la red local (10 h)
 	\begin{enumerate}
-		\item Instalación y configuración de la red local (7 h)
-		\item Pruebas iniciales de conexión del servidor a la red (5 h)
+		\item Instalación y configuración de la red local (3 h)
+		\item Pruebas iniciales de conexión del servidor a la red (2 h)
 		\item Pruebas de conexión del nodo a la red (3 h)
-		\item Documentar brevemente lo sucedido en este punto (5 h)
+		\item Documentar brevemente lo sucedido en este punto (2 h)
 	\end{enumerate}
 \item Desarrollo del software del servidor (frontend y backend) (292 h)
 	\begin{enumerate}
@@ -360,7 +360,7 @@ Las tareas se han agrupado por tema y ordenado por secuencialidad.
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: (652 h). \\
+Cantidad total de horas: (642 h). \\
 Si en los cálculos anteriores llegara a haber sobrante de tiempo, se puede analizar diseñar e implementar el control de la salida de 220 VCA para controlar la ventilación. Dicha duración de tareas extra (opcionales) se estima de la siguiente manera:
 \begin{itemize}
 
@@ -378,7 +378,7 @@ Si en los cálculos anteriores llegara a haber sobrante de tiempo, se puede anal
 \label{sec:AoN}
 
 A continuación se muestra el diagrama Activity on Node. Las unidades de tiempo están expresadas en horas (h). El camino crítico está marcado en color rojo. LA duración total del camino crítico es de 612 horas.\\
-Por la forma de diagramar las tareas en el WBS, resulta difícil desdoblar la gran mayoría de ellas, por lo que el resultado es el expresado en la imagen.
+Por la forma de diagramar las tareas en el WBS y al ser el único recurso para hacer todas las actividades, resulta difícil desdoblar la gran mayoría de ellas, por lo que el resultado es el expresado en la imagen.
 
 \begin{figure}[htpb]
 \centering 
@@ -389,8 +389,6 @@ Por la forma de diagramar las tareas en el WBS, resulta difícil desdoblar la gr
 
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
-
-\begin{consigna}{red}
 
 Existen muchos programas y recursos \textit{online} para hacer diagramas de gantt, entre los cuales destacamos:
 
@@ -440,20 +438,9 @@ En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realiza
 
 \end{landscape}
 
-\end{consigna}
-
 
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
-
-
-%Si el proyecto es complejo entonces separarlo en partes:
-%\begin{itemize}
-%	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-%	\item El desglose detallado del subtotal de cada una de las áreas.
-%\end{itemize}
-
-%IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
 
 \begin{table}[htpb]
 \centering
@@ -488,8 +475,8 @@ Sensor de presión y temperatura I2C BMP280 &
   \multicolumn{1}{c|}{\$404} \\ \hline
 Cables, conectores y componentes genéricos &
   \multicolumn{1}{c|}{1} &
-  \multicolumn{1}{c|}{\$1000} &
-  \multicolumn{1}{c|}{\$1000} \\ \hline
+  \multicolumn{1}{c|}{\$2500} &
+  \multicolumn{1}{c|}{\$2500} \\ \hline
 Fuente 5 VCC 500 mA miniUSB &
   \multicolumn{1}{c|}{1} &
   \multicolumn{1}{c|}{\$500} &
@@ -508,7 +495,7 @@ Memoria Micro SD 32 GB 100 MB/s &
   \multicolumn{1}{c|}{\$3500} \\ \hline
     
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{\$97746} \\ \hline
+  \multicolumn{1}{c|}{\$99246} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -524,11 +511,11 @@ Descripción &
 \multicolumn{3}{|c|}{SUBTOTAL} &
   \multicolumn{1}{c|}{\$39098} \\ \hline
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} & \$136844
+\multicolumn{3}{|c|}{TOTAL} & \$138344
    \\ \hline
 \end{tabularx}%
 \end{table}
-
+El presupuesto anterior da un total estimado de \$138344. Ante el escenario inflacionario actual los precios varían mes a mes, por lo que se estima el presupuesto en dólares. Tomando un valor de \$169 por dólar al 17/11/2022, el mismo da un estimado de USD818,60.
 
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
