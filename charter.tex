@@ -390,54 +390,62 @@ Por la forma de diagramar las tareas en el WBS y al ser el único recurso para h
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
 
-Existen muchos programas y recursos \textit{online} para hacer diagramas de gantt, entre los cuales destacamos:
-
-\begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-\end{itemize}
-
-Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
-
-Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
-
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
-
-\begin{figure}[htbp]
-\begin{center}
-\begin{ganttchart}{1}{12}
-  \gantttitle{2020}{12} \\
-  \gantttitlelist{1,...,12}{1} \\
-  \ganttgroup{Group 1}{1}{7} \\
-  \ganttbar{Task 1}{1}{2} \\
-  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
-  \ganttmilestone{Milestone o hito}{7} \ganttnewline
-  \ganttbar{Final Task}{8}{12}
-  \ganttlink{elem2}{elem3}
-  \ganttlink{elem3}{elem4}
-\end{ganttchart}
-\end{center}
-\caption{Diagrama de gantt de ejemplo}
-\label{fig:gantt}
-\end{figure}
-
+A continuación se observa el diagrama de Gantt subdividido en varias partes para que sea legible. La carga horaria semanal promedio se hizo teniendo en cuenta días laborales y días no laborales. En promedio, en días laborales se trabajará 10 horas semanales y en fin de semana se trabajará en promedio 6 horas, dando un total en promedio una carga horaria semanal de 16 hs. Esta carga variará además en base la carga que tengan las materias del posgrado.\\
+En la primera imagen se ven los 8 grupos de tareas con la duración total de la realización del proyecto. Luego se ve el desglose en varias imágenes, agrupando las tareas en cuanto a similitud o temas comunes.
 
 \begin{landscape}
 \begin{figure}[htpb]
 \centering 
-\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
-\caption{Ejemplo de diagrama de Gantt rotado}
+\includegraphics[height=.7\textheight]{./Figuras/Gantt_resumen.png}
+\caption{Resumen de gurpos de tareas}
 \label{fig:diagGantt}
 \end{figure}
-
 \end{landscape}
 
+\begin{landscape}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[height=.7\textheight]{./Figuras/Gantt_1-2.png}
+\caption{Inicio y pasos preliminares}
+\label{fig:diagGantt}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[height=.7\textheight]{./Figuras/Gantt_3-4.png}
+\caption{Adecuación del hardware}
+\label{fig:diagGantt}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[height=.7\textheight]{./Figuras/Gantt_5.png}
+\caption{Desarrollo del software del servidor}
+\label{fig:diagGantt}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[height=.7\textheight]{./Figuras/Gantt_6.png}
+\caption{Desarrollo del software del nodo}
+\label{fig:diagGantt}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[height=.7\textheight]{./Figuras/Gantt_7-8.png}
+\caption{Pruebas finales y desarrollo de documentación}
+\label{fig:diagGantt}
+\end{figure}
+\end{landscape}
 
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
