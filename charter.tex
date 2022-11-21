@@ -527,18 +527,17 @@ El presupuesto anterior da un total estimado de \$138344. Ante el escenario infl
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-%a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
-a) Identificación de riesgo y estimación de sus ocurrencias.
+a) Identificación de los riesgos y estimación de sus ocurrencias:
 
-Los riesgos listados a continuación serán ponderados del 1 al 10 en Severidad (S) y Ocurrencia (O).
+Los riesgos listados a continuación son ponderados del 1 al 10 en severidad (S) y probabilidad de ocurrencia (O).
  
-Riesgo 1: desabastecimiento o falta de algún componente clave del sistema, tal como la Raspberry Pi o el ESP32.
+Riesgo 1: desabastecimiento de componentes claves del sistema.
 \begin{itemize}
-	\item Severidad (8): son los 2 componentes claves del sistema que tienen "inteligencia", y de no conseguirse habrá que buscar opciones y re adaptar parte del código, lo cual introduciría demoras.
-	\item Probabilidad de ocurrencia (7): hay escasez a nivel mundial las placas Raspberry Pi y Argentina está en un período de dificultades con las importaciones.\\ 
+	\item Severidad (8): de no conseguir los componentes más importantes del sistema habrá que buscar opciones y re adaptar parte del código, lo cual introduciría demoras.
+	\item Ocurrencia (7): hay escasez a nivel mundial las placas Raspberry Pi y Argentina está en un período de dificultades con las importaciones.
 \end{itemize}   
 
-Riesgo 2: incompatibilidad del hardware adicional al nodo con la placa del ESP32.
+Riesgo 2: incompatibilidad del hardware adicional con la placa del ESP32.
 \begin{itemize}
 	\item Severidad (4): el hardware no funciona de la manera esperada por incompatibilidad entre las tensiones, corrientes o frecuencias.
 	\item Ocurrencia (4): se tiene experiencia previa en desarrollo de hardware similar y son problemas frecuentes.
@@ -546,29 +545,35 @@ Riesgo 2: incompatibilidad del hardware adicional al nodo con la placa del ESP32
 
 Riesgo 3: demoras en el desarrollo del software del servidor.
 \begin{itemize}
-	\item Severidad (9): es el software con más carga de trabajo a realizar y más complejo del sistema y sin este no hay funcionalidad en una plataforma de IoT y carece de sentido.
-	\item Ocurrencia (8): no se tiene la experiencia necesaria al momento del desarrollo del presente documento para hacer la tarea en su totalidad.
+	\item Severidad (7): es el software con más carga de trabajo a realizar y más complejo del sistema y sin este no hay funcionalidad en una plataforma de IoT.
+	\item Ocurrencia (7): no se tiene la experiencia necesaria al momento del desarrollo del presente documento para hacer la tarea en su totalidad.
 \end{itemize}
 
 Riesgo 4: problemas de comunicación entre el nodo y el servidor.
 \begin{itemize}
-	\item Severidad (7): si bien el nodo podrá programarse de forma local, perdería la capacidad de tomar parámetros pasados de forma remota y el servidor perdería los parámetros que está sensando el nodo.
-	\item Ocurrencia (6): al ser programados en plataformas y lenguajes distintos, es probable que haya problemas de envío o interpretación de datos.
+	\item Severidad (6): si bien el nodo podrá programarse de forma local, perdería la capacidad de tomar parámetros pasados de forma remota y el servidor perdería los parámetros que está sensando el nodo.
+	\item Ocurrencia (4): al ser programados en plataformas y lenguajes distintos, es probable que haya problemas de envío o interpretación de datos.
 \end{itemize}
 
-Riesgo 5: pérdidas o inestabilidad en la conexión con la red
+Riesgo 5: inestabilidad en la conexión con la red.
 \begin{itemize}
-	\item Severidad (6): la conexión del nodo a la red es indispensable para poder leer las entradas y modificar las salidas.
+	\item Severidad (5): la conexión del nodo a la red es indispensable para poder leer las entradas y modificar las salidas.
 	\item Ocurrencia (3): al estar conectado de forma inalámbrica puede ser que la señal de \textit{Wi-Fi} sea débil en la ubicación del nodo.
 \end{itemize}
 
-Riesgo 6: rotura o daño de la tarjeta de memoria del servidor
+Riesgo 6: daño de la tarjeta de memoria del servidor.
 \begin{itemize}
-	\item Severidad (7): en la tarjeta de memoria de la Raspberry Pi se guardan todos los datos tomados, así como también se corre el sistema operativo y todo el software desarrollado en el proyecto.
-	\item Ocurrencia (4): al tener varias lecturas y escrituras se corre el riesgo de que se fatigue la memoria y se pierda la información.
+	\item Severidad (9): en la tarjeta de memoria de la Raspberry Pi se guardan todos los datos tomados, corre el sistema operativo y todo el software desarrollado en el proyecto.
+	\item Ocurrencia (4): al tener varias lecturas y escrituras se corre el riesgo de que se fatigue la memoria micro SD y se pierda la información.
 \end{itemize}
 
-b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
+Riesgo 7: imposibilidad de hacer una instalación básica para pruebas.
+\begin{itemize}
+	\item Severidad (8): sin una instalación básica de pruebas no se puede hacer la depuración completa del prototipo.
+	\item Ocurrencia (2): las instalaciones se pueden hacer en lugares de forma básica y hasta en una maqueta.
+\end{itemize}
+
+b) Tabla de gestión de riesgos (El RPN se calcula como RPN=SxO):
 
 \begin{table}[htpb]
 \centering
@@ -576,32 +581,42 @@ b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
+1. Desabastecimiento de componentes claves del sistema				&8	&7	&56\cellcolor{red}	&8	&2	&16\cellcolor{green}	\\ \hline
+2. Incompatibilidad del hardware adicional con la placa del ESP32	&4	&4	&16\cellcolor{green}	&	&	&	\\ \hline
+3. Demoras en el desarrollo del software del servidor				&7	&7	&49\cellcolor{red}	&7	&3	&21\cellcolor{green} 	\\ \hline
+4. Problemas de comunicación entre el nodo y el servidor				&6	&4	&24\cellcolor{green}	&	&	& 	\\ \hline
+5. Inestabilidad en la conexión con la red							&5	&3	&15\cellcolor{green}	&	&	&	\\ \hline
+6. Daño de la tarjeta de memoria del servidor						&9	&4	&36\cellcolor{red}	&3	&4	&12\cellcolor{green}	\\ \hline
+7. Imposibilidad de hacer una instalación básica para pruebas		&8	&2	&16\cellcolor{green}	&	&	&	\\ \hline
 \end{tabularx}%
 \end{table}
 
 Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
-
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 25 puntos.
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
-  - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-  - Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
+Riesgo 1: desabastecimiento de componentes claves del sistema.
+\begin{itemize}
+	\item Plan de mitigación: adelantar las compras para cuando se tenga tiempo y los recursos materiales.
+	\item Severidad (8): La severidad sigue siendo la misma, ya que si no se dispone del hardware no se puede desarrollar el prototipo para el proyecto.
+	\item Ocurrencia (2): hacia fines del 2022 todavía hay stock de la placa Raspberry Pi y ESP32, por lo que se planea hacerlo en breve.
+\end{itemize}
+  
+Riesgo 3: demoras en el desarrollo del software del servidor.
+\begin{itemize}
+	\item Plan de mitigación: se buscará información y se capacitará, se comenzarán con pruebas previas al desarrollo del proyecto durante los meses diciembre, enero y febrero previos al inicio del desarrollo del proyecto.
+	\item Severidad (7): la severidad sigue siendo la misma ya que por más que se adelanten tareas, sin este desarrollo el sistema no es de IoT.
+	\item Ocurrencia (3): al adelantar la adquisición de algunos conocimientos, los preparativos del entorno de la Raspberry Pi y probablemente alguna parte del código bajan las chances de sufrir demoras.
+\end{itemize}
 
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-
+Riesgo 6: daño de la tarjeta de memoria del servidor.
+\begin{itemize}
+	\item Plan de mitigación: se harán backups cada semana o cambio importante de la información creada y código desarrollado, y se creará una imagen de la memoria.
+	\item Severidad (3): se disminuye la severidad ya que si se dañara o se perdiera información el único perjuicio es incurrir en una demora para la recuperación de la información.
+	\item Ocurrencia (4): la probabilidad de ocurrencia es la misma ya que puede pasar de igual manera, y se trabaja en mitigar la severidad del riesgo creando copias.
+\end{itemize}
 
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
