@@ -203,41 +203,41 @@ Para el desarrollo del presente proyecto se supone que:
 Los requerimientos revisados en conjunto con el cliente y agrupados por afinidad son:
 
 \begin{enumerate}
-	\item Requerimientos funcionales del sistema
+	\item Requerimientos funcionales del sistema.
 		\begin{enumerate}
-			\item El sistema deberá poder funcionar de forma automática o manual
-			\item El modo automático consistirá en poder programar horarios y niveles de las salidas, seteadas a través de la interfaz web
-			\item El modo manual consistirá en accionar las salidas desde la interfaz web o desde los comandos en el nodo
-			\item Al modificarse de forma manual cualquier parámetro, el nodo informará al servidor el nuevo valor del parámetro seteado
-			\item Al activar el modo manual, se interrumpirá el modo automático
-			\item Se guardarán los valores sensados y seteados en una base de datos dentro del servidor
-			\item Los usuarios podrán revisar los datos de los valores actuales e históricos
+			\item El sistema deberá poder funcionar de forma automática o manual.
+			\item El modo automático consistirá en poder programar horarios y niveles de las salidas, seteadas a través de la interfaz web.
+			\item El modo manual consistirá en accionar las salidas desde la interfaz web o desde los comandos en el nodo.
+			\item Al modificarse de forma manual cualquier parámetro, el nodo informará al servidor el nuevo valor del parámetro seteado.
+			\item Al activar el modo manual, se interrumpirá el modo automático.
+			\item Se guardarán los valores sensados y seteados en una base de datos dentro del servidor.
+			\item Los usuarios podrán revisar los datos de los valores actuales e históricos.
 		\end{enumerate}
-	\item Requerimientos asociados al nodo
+	\item Requerimientos asociados al nodo.
 		\begin{enumerate}
-			\item El nodo estará implementado en una placa con un ESP32
-			\item Contará con un potenciómetro digital para elegir la temperatura e iluminación
-			\item Tendrá con un display que mostrará la temperatura sensada y el estado de las salidas
-			\item La frecuencia de sensado de la temperatura será de 1 minuto
-			\item Los niveles de tensión de las entradas y salidas lógicas serán adaptados a los valores lógicos correspondientes de los actuadores
-			\item Se alimentará con una fuente de 5 VCC y un cable microUSB
+			\item El nodo estará implementado en una placa con un ESP32.
+			\item Contará con un potenciómetro digital para elegir la temperatura e iluminación.
+			\item Tendrá con un display que mostrará la temperatura sensada y el estado de las salidas.
+			\item La frecuencia de sensado de la temperatura será de 1 minuto.
+			\item Los niveles de tensión de las entradas y salidas lógicas serán adaptados a los valores lógicos correspondientes de los actuadores.
+			\item Se alimentará con una fuente de 5 VCC y un cable microUSB.
 		\end{enumerate}
-	\item Requerimientos asociados al servidor
+	\item Requerimientos asociados al servidor.
 		\begin{enumerate}
-			\item El servidor estará montado en una Raspberry Pi con sistema operativo Linux
-			\item Alojará el código de la página web desde la que se ingresará al sistema
-			\item Alojará el código del backend del servidor y la base de datos
-			\item Se alimentará con una fuente de 5 VCC
+			\item El servidor estará montado en una Raspberry Pi con sistema operativo Linux.
+			\item Alojará el código de la página web desde la que se ingresará al sistema.
+			\item Alojará el código del backend del servidor y la base de datos.
+			\item Se alimentará con una fuente de 5 VCC.
 		\end{enumerate}
-	\item Requerimientos de la interfaz
+	\item Requerimientos de la interfaz.
 		\begin{enumerate}
-			\item Será intuitiva y sencilla de operar
-			\item Contará con logueo de usuario y contraseña para ver y cambiar parámetros
+			\item Será intuitiva y sencilla de operar.
+			\item Contará con logueo de usuario y contraseña para ver y cambiar parámetros.
 		\end{enumerate}
-	\item Requerimientos opcionales (se llevarán a cabo si el tiempo es suficiente)
+	\item Requerimientos opcionales (se llevarán a cabo si el tiempo es suficiente).
 		\begin{enumerate}
-			\item El nodo contará con una salida de dimerización de 220 VCA para ventilación
-			\item El servidor (Raspberry Pi) funcionará como \textit{access point} al que se conectará el nodo
+			\item El nodo contará con una salida de dimerización de 220 VCA para ventilación.
+			\item El servidor (Raspberry Pi) funcionará como \textit{access point} al que se conectará el nodo.
 		\end{enumerate}
 \end{enumerate}
 
@@ -621,21 +621,115 @@ Riesgo 6: daño de la tarjeta de memoria del servidor.
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-Para cada uno de los requerimientos del proyecto indique:
-\begin{itemize} 
-\item Req \#1: copiar acá el requerimiento.
-
-\begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
-\end{itemize}
-
-\end{itemize}
-
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
-
-\end{consigna}
+\begin{enumerate}
+	\item Requerimientos funcionales del sistema.
+		\begin{enumerate}
+			\item El sistema deberá poder funcionar de forma automática o manual.
+			\begin{itemize}
+				\item Verificación: se creará el software con 2 modos, incluyendo un script para conocer la hora local y adicionando al nodo hardware para la modificación de parámetros.
+				\item Validación: se validará la existencia de los modos desde la aplicación web.
+			\end{itemize}
+			\item El modo automático consistirá en poder programar horarios y niveles de las salidas, seteadas a través de la interfaz web.
+			\begin{itemize}
+				\item Verificación: se incorporará un script para saber la hora local al software y se programarán funciones con horarios.
+				\item Validación: se programará funciones con horarios y se validará el accionamiento de las salidas.
+			\end{itemize}
+			\item El modo manual consistirá en accionar las salidas desde la interfaz web o desde los comandos en el nodo.
+			\begin{itemize}
+				\item Verificación: se analizarán las hojas de datos del ESP32 y del hardware utilizado realizando pruebas funcionales.
+				\item Validación: se accionarán los controles del nodo modificando los parámetros, validando el cambio de las salidas.
+			\end{itemize}
+			\item Al modificarse de forma manual cualquier parámetro, el nodo informará al servidor el nuevo valor del parámetro seteado.
+			\begin{itemize}
+				\item Verificación: se incorporará una función de envío de parámetros dentro del software del nodo y se verificará el envío de datos.
+				\item Validación: se accionarán los controles viendo al mismo tiempo que se modifiquen en la aplicación web.
+			\end{itemize}
+			\item Al activar el modo manual, se interrumpirá el modo automático.
+			\begin{itemize}
+				\item Verificación: se incorporará una función en el backend para que dé aviso al nodo el cambio del modo a automático y se verificará el envío de datos.
+				\item Validación: se programará el modo automático y se verificará de cambio del modo en el nodo.
+			\end{itemize}
+			\item Se guardarán los valores sensados y seteados en una base de datos dentro del servidor.
+			\begin{itemize}
+				\item Verificación: se verificará el envío periódico de datos del nodo al servidor informando el estado de las salidas y los sensores conectados y muestra de estos valores.
+				\item Validación: muestra de los valores en tiempo real en la aplicación web.
+			\end{itemize}
+			\item Los usuarios podrán revisar los datos de los valores actuales e históricos.
+			\begin{itemize}
+				\item Verificación: se incorporará de una base de datos en el servidor que almacene los parámetros y se verificará la cantidad y calidad de estos datos.
+				\item Validación: se presentarán en pantalla a través de la aplicación web los parámetros almacenados en la base de datos.
+			\end{itemize}
+		\end{enumerate}
+	\item Requerimientos asociados al nodo.
+		\begin{enumerate}
+			\item El nodo estará implementado en una placa con un ESP32.
+			\begin{itemize}
+				\item Verificación: se estudiarán los aspectos necesarios en las hojas de datos de la placa ESP32.
+				\item Validación: se adjuntarán imágenes del nodo con la placa conectada dentro de él.
+			\end{itemize}
+			\item Contará con un potenciómetro digital para elegir la temperatura e iluminación.
+			\begin{itemize}
+				\item Verificación: se estudiarán las hojas de datos del potenciómetro, se medirá con osciloscopio o similar y se verificará el funcionamiento en placa de prueba.
+				\item Validación: se accionará el potenciómetro para modificar parámetros.
+			\end{itemize}
+			\item Tendrá con un display que mostrará la temperatura sensada y el estado de las salidas.
+			\begin{itemize}
+				\item Verificación: se estudiarán las hojas de datos del display y se verificará que se muestren los datos.
+				\item Validación: se mostrará la lectura de pantalla con información y corroboración visual del estado de las salidas.
+			\end{itemize}
+			\item La frecuencia de sensado de la temperatura será de 1 minuto.
+			\begin{itemize}
+				\item Verificación: se programará el software del nodo para tomar lectura de los sensores canda un minuto usando timers internos y se verificará el envío de datos en ese intervalo de tiempo.
+				\item Validación: se mostrarán los datos sensados en la pantalla del nodo y en la aplicación web, actualizándose con cada lectura y envío de información.
+			\end{itemize}
+			\item Los niveles de tensión de las entradas y salidas lógicas serán adaptados a los valores lógicos correspondientes de los actuadores.
+			\begin{itemize}
+				\item Verificación: se utilizarán transistores bipolares o FET para conmutar las salidas de la placa del ESP32. Se verificarán las hojas de datos de todos los componentes.
+				\item Validación: se detectará y mostrará el accionamiento correcto de las salidas.
+			\end{itemize}
+			\item Se alimentará con una fuente de 5 VCC y un cable microUSB.
+			\begin{itemize}
+				\item Verificación: se estudiarán las hojas de datos de la placa del ESP32.
+				\item Validación: se validará el encendido y correcto funcionamiento.
+			\end{itemize}
+		\end{enumerate}
+	\item Requerimientos asociados al servidor.
+		\begin{enumerate}
+			\item El servidor estará montado en una Raspberry Pi con sistema operativo Linux.
+			\begin{itemize}
+				\item Verificación: se comprobará el funcionamiento del sistema operativo con conexión a una pantalla y se harán algunas pruebas de software.
+				\item Validación: se adjuntarán imágenes del hardware del servidor.
+			\end{itemize}
+			\item Alojará el código de la página web desde la que se ingresará al sistema.
+			\begin{itemize}
+				\item Verificación: se desarrollará el software frontend dentro de la memoria que alojará la Raspberry Pi.
+				\item Validación: se mostrará el encendido del servidor y se accederá a la aplicación web.
+			\end{itemize}
+			\item Alojará el código del backend del servidor y la base de datos.
+			\begin{itemize}
+				\item Verificación: se desarrollará el software backend dentro de la memoria que alojará la Raspberry Pi.
+				\item Validación: se comprobarán los datos recopilados y guardados en la base de datos.
+			\end{itemize}
+			\item Se alimentará con una fuente de 5 VCC.
+			\begin{itemize}
+				\item Verificación: se estudiarán las hojas de datos de la Raspberry Pi.
+				\item Validación: se mostrará un esquema de conexión del hardware del servidor.
+			\end{itemize}
+		\end{enumerate}
+	\item Requerimientos de la interfaz.
+		\begin{enumerate}
+			\item Será intuitiva y sencilla de operar.
+			\begin{itemize}
+				\item Verificación: se desarrollará la aplicación web en base a experiencias de usuario y se harán pruebas funcionales con clientes potenciales.
+				\item Validación: se demostrará la aplicación web dando un breve recorrido y explicación y se escucharán sugerencias y reclamos.
+			\end{itemize}
+			\item Contará con logueo de usuario y contraseña para ver y cambiar parámetros.
+			\begin{itemize}
+				\item Verificación: se desarrollará y probará el frontend y del backend con un usuario y clave.
+				\item Validación: se creará de un usuario para que el cliente pueda ver los estados y datos almacenados.
+			\end{itemize}
+		\end{enumerate}
+\end{enumerate}
 
 \section{15. Procesos de cierre}    
 \label{sec:cierre}
