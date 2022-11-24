@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="" company="" manager="Ing. C&#xE9;sar Javier Fanelli" phase="" project-start="20230227T000000Z" mrproject-version="2" calendar="1">
+<project name="Plan de proyecto" company="" manager="Ing. C&#xE9;sar Javier Fanelli" phase="" project-start="20230227T000000Z" mrproject-version="2" calendar="1">
   <properties/>
   <phases/>
   <calendars>
@@ -203,7 +203,7 @@
           <predecessor id="1" predecessor-id="39" type="FS"/>
         </predecessors>
       </task>
-      <task id="41" name="Resoluci&#xF3;n de problemas de funcionamiento" note="" work="72000" start="20230805T110000Z" end="20230814T225900Z" work-start="20230806T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="41" name="Resoluci&#xF3;n de problemas de integraci&#xF3;n" note="" work="72000" start="20230805T110000Z" end="20230814T225900Z" work-start="20230806T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
           <predecessor id="1" predecessor-id="40" type="FS"/>
         </predecessors>
