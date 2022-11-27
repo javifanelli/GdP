@@ -527,7 +527,7 @@ El presupuesto anterior da un total estimado de \$138344. Ante el escenario infl
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-a) Identificación de los riesgos y estimación de sus ocurrencias:
+a) Identificación de los riesgos y estimación de sus ocurrencias.
 
 Los riesgos listados a continuación son ponderados del 1 al 10 en severidad (S) y probabilidad de ocurrencia (O).
  
@@ -573,7 +573,7 @@ Riesgo 7: imposibilidad de hacer una instalación básica para pruebas.
 	\item Ocurrencia (2): las instalaciones se pueden hacer en lugares de forma básica y hasta en una maqueta.
 \end{itemize}
 
-b) Tabla de gestión de riesgos (El RPN se calcula como RPN=SxO):
+b) Tabla de gestión de riesgos (El RPN se calcula como RPN=SxO).
 
 \begin{table}[htpb]
 \centering
@@ -591,31 +591,30 @@ Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
 \end{tabularx}%
 \end{table}
 
-Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 25 puntos.
+Criterio adoptado: se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 25 puntos.
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
-c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
+c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido.
  
 Riesgo 1: desabastecimiento de componentes claves del sistema.
 \begin{itemize}
 	\item Plan de mitigación: adelantar las compras para cuando se tenga tiempo y los recursos materiales.
-	\item Severidad (8): La severidad sigue siendo la misma, ya que si no se dispone del hardware no se puede desarrollar el prototipo para el proyecto.
-	\item Ocurrencia (2): hacia fines del 2022 todavía hay stock de la placa Raspberry Pi y ESP32, por lo que se planea hacerlo en breve.
+	\item Severidad* (8): la severidad sigue siendo la misma, ya que si no se dispone del hardware no se puede desarrollar el prototipo para el proyecto.
+	\item Ocurrencia* (2): hacia fines del 2022 todavía hay stock de la placa Raspberry Pi y ESP32, por lo que se planea hacerlo en breve.
 \end{itemize}
   
 Riesgo 3: demoras en el desarrollo del software del servidor.
 \begin{itemize}
 	\item Plan de mitigación: se buscará información y se capacitará, se comenzarán con pruebas previas al desarrollo del proyecto durante los meses diciembre, enero y febrero previos al inicio del desarrollo del proyecto.
-	\item Severidad (7): la severidad sigue siendo la misma ya que por más que se adelanten tareas, sin este desarrollo el sistema no es de IoT.
-	\item Ocurrencia (3): al adelantar la adquisición de algunos conocimientos, los preparativos del entorno de la Raspberry Pi y probablemente alguna parte del código bajan las chances de sufrir demoras.
+	\item Severidad* (7): la severidad sigue siendo la misma ya que por más que se adelanten tareas, sin este desarrollo el sistema no es de IoT.
+	\item Ocurrencia* (3): al adelantar la adquisición de algunos conocimientos, los preparativos del entorno de la Raspberry Pi y probablemente alguna parte del código bajan las chances de sufrir demoras.
 \end{itemize}
 
 Riesgo 6: daño de la tarjeta de memoria del servidor.
 \begin{itemize}
 	\item Plan de mitigación: se harán backups cada semana o cambio importante de la información creada y código desarrollado, y se creará una imagen de la memoria.
-	\item Severidad (3): se disminuye la severidad ya que si se dañara o se perdiera información el único perjuicio es incurrir en una demora para la recuperación de la información.
-	\item Ocurrencia (4): la probabilidad de ocurrencia es la misma ya que puede pasar de igual manera, y se trabaja en mitigar la severidad del riesgo creando copias.
+	\item Severidad* (3): se disminuye la severidad ya que si se dañara o se perdiera información el único perjuicio es incurrir en una demora para la recuperación de la información.
+	\item Ocurrencia* (4): la probabilidad de ocurrencia es la misma ya que puede pasar de igual manera, y se trabaja en mitigar la severidad del riesgo creando copias.
 \end{itemize}
 
 \section{14. Gestión de la calidad}
@@ -632,7 +631,7 @@ Riesgo 6: daño de la tarjeta de memoria del servidor.
 			\item El modo automático consistirá en poder programar horarios y niveles de las salidas, seteadas a través de la interfaz web.
 			\begin{itemize}
 				\item Verificación: se incorporará un script para saber la hora local al software y se programarán funciones con horarios.
-				\item Validación: se programará funciones con horarios y se validará el accionamiento de las salidas.
+				\item Validación: a través de la interfaz web se crearán funciones con horarios y se validará el accionamiento de las salidas.
 			\end{itemize}
 			\item El modo manual consistirá en accionar las salidas desde la interfaz web o desde los comandos en el nodo.
 			\begin{itemize}
@@ -647,16 +646,16 @@ Riesgo 6: daño de la tarjeta de memoria del servidor.
 			\item Al activar el modo manual, se interrumpirá el modo automático.
 			\begin{itemize}
 				\item Verificación: se incorporará una función en el backend para que dé aviso al nodo el cambio del modo a automático y se verificará el envío de datos.
-				\item Validación: se programará el modo automático y se verificará de cambio del modo en el nodo.
+				\item Validación: se activará el modo automático cargándole funciones y se validará de cambio del modo en el nodo.
 			\end{itemize}
 			\item Se guardarán los valores sensados y seteados en una base de datos dentro del servidor.
 			\begin{itemize}
 				\item Verificación: se verificará el envío periódico de datos del nodo al servidor informando el estado de las salidas y los sensores conectados y muestra de estos valores.
-				\item Validación: muestra de los valores en tiempo real en la aplicación web.
+				\item Validación: se validará mediante la muestra de los valores en tiempo real en la aplicación web.
 			\end{itemize}
 			\item Los usuarios podrán revisar los datos de los valores actuales e históricos.
 			\begin{itemize}
-				\item Verificación: se incorporará de una base de datos en el servidor que almacene los parámetros y se verificará la cantidad y calidad de estos datos.
+				\item Verificación: se incorporará una base de datos en el servidor que almacene los parámetros y se verificará la cantidad y calidad de estos datos.
 				\item Validación: se presentarán en pantalla a través de la aplicación web los parámetros almacenados en la base de datos.
 			\end{itemize}
 		\end{enumerate}
@@ -670,7 +669,7 @@ Riesgo 6: daño de la tarjeta de memoria del servidor.
 			\item Contará con un potenciómetro digital para elegir la temperatura e iluminación.
 			\begin{itemize}
 				\item Verificación: se estudiarán las hojas de datos del potenciómetro, se medirá con osciloscopio o similar y se verificará el funcionamiento en placa de prueba.
-				\item Validación: se accionará el potenciómetro para modificar parámetros.
+				\item Validación: se accionará el potenciómetro para modificar parámetros y poder observar las variaciones.
 			\end{itemize}
 			\item Tendrá con un display que mostrará la temperatura sensada y el estado de las salidas.
 			\begin{itemize}
@@ -747,11 +746,12 @@ Riesgo 6: daño de la tarjeta de memoria del servidor.
 		\item Participación: Ing. Fernando Lichtschein (director del trabajo final).
 	\end{itemize}
 	En este proceso se analizarán las técnicas de programación, lenguajes utilizados, estructura de la base de datos, protocolos de comunicación, diseño de los circuitos anexos y la resolución de problemas que surgieron en el desarrollo. Se pedirá opinión al director del proyecto que con su experiencia podrá aportar otro enfoque.
-	\item Organización del acto de agradecimiento
+	\item Defensa pública del proyecto.
 	\begin{itemize}	
 		\item Responsable: Ing. César Javier Fanelli.
 	\end{itemize}
-	Me encargaré de organizar el acto de agradecimiento a todos los involucrados en el desarrollo del proyecto, director y cliente del proyecto que aportaron su tiempo de buena voluntad, jurados que aportarán su tiempo y opiniones acerca del proyecto, autoridades y profesores del posgrado quienes me capacitaron a lo largo del curso, y a mi familia que me apoyó durante todo el transcurso del posgrado. Los gastos correspondientes serán financiados por mí.
+	Se llevará a cabo de forma virtual y participarán los interesados, jurados y autoridades de la especialización.Al final de la presentación se agradecerá formalmente a todos aquellos que
+colaboraron durante el proyecto.
 \end{itemize}
 
 \end{document}
