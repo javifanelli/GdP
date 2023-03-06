@@ -198,11 +198,12 @@
 	{\normalsize Director:\\}
 	{\Large \supname \hspace{1px} (\pertesupname) \\}
 	%\vspace{2cm}
-	\ifbool{codirector}{% If the codirector class option has been specified
+	%\ifbool{codirector}{% If the codirector class option has been specified
 	\vspace{10px}
 	{\normalsize Codirector:\\}
 	{\Large \cosupname  \hspace{1px} (\pertecosupname) \\}
-	}{\vspace{2pc}%nothing
+	%}
+	{\vspace{2pc}%nothing
 	}
 		
 	
